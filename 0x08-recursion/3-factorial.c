@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
-* factioral - entry point
+* factorial - entry point
 * @n: input
 * Return: Always 0
 */
