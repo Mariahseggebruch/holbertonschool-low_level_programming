@@ -1,29 +1,31 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "main.h"
+#include <ctype.h>
 /**
- * main - Entry Point
- * @argc: arguments
- * @argv: array pointing to arguments
- * Return: 0
+ * main - add
+ * @argc:int
+ * @argv:string
+ * Return:int
  */
 int main(int argc, char *argv[])
 {
-	int i, sum = 0;
-
-	if (argc < 1)
-		return (0);
+	int x = 0, i, j;
 
 	for (i = 1; i < argc; i++)
 	{
-		if (!atoi(argv[i]))
+		for (j = 0; argv[i][j]; j++)
 		{
-			printf("%s\n", "Error");
-			return (1);
+			if (isdigit(argv[i][j]) == 0)
+			{
+				printf("Error\n");
+				return (1);
+			}
 		}
-		sum += atoi(argv[i]);
 	}
-	printf("%d\n", sum);
-
+	for (i = 1; i < argc; i++)
+	{
+		x += atoi(argv[i]);
+	}
+	printf("%d\n", x);
 	return (0);
 }
