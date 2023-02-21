@@ -1,33 +1,22 @@
-#include "holberton.h"
+#include <stdio.h>
 #include <stdlib.h>
-
+#include "main.h"
 /**
- * _strdup - Returns a pointer to a newly-allocated space in memory
- *           containing a copy of the string given as parameter.
- * @str:string
- *
- * Return:char
+ * free_grid - use free function on previous grid
+ * @grid: 2 dim. array to free
+ * @height: input height (size)
+ * Return: free'd grid
  */
-char *_strdup(char *str)
+void free_grid(int **grid, int height)
 {
-	char *s;
-	int i, l = 0;
+	int i;
 
-	if (str == NULL)
-		return (NULL);
-
-	for (i = 0; str[i]; i++)
-		l++;
-
-	s = malloc(sizeof(char) * (l + 1));
-
-	if (s == NULL)
-		return (NULL);
-
-	for (i = 0; str[i]; i++)
-		s[i] = str[i];
-
-	s[l] = '\0';
-
-	return (s);
+	if (grid != NULL || height != 0)
+	{
+		for (i = 0; i < height; i++)
+		{
+			free(grid[i]);
+		}
+		free(grid);
+	}
 }
