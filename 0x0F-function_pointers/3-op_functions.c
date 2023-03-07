@@ -1,4 +1,4 @@
-i#include "3-calc.h"
+#include "3-calc.h"
 #include <stdio.h>
 #include <stdlib.h>
 /**
@@ -12,7 +12,6 @@ int op_add(int a, int b)
 		return (a + b);
 	}
 
-/**
  * op_sub - sub
  * @a:integer
  * @b:intger
