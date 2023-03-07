@@ -12,7 +12,8 @@ int op_add(int a, int b)
 		return (a + b);
 	}
 
-/* op_sub - sub
+/**
+ * op_sub - sub
  * @a:integer
  * @b:intger
  * Return:result
